@@ -24,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen>
           child: PageView(
             controller: _controller,
             physics: new AlwaysScrollableScrollPhysics(),
-            children: <Widget>[LoginPage(), HomePage(), SignupPage()],
+            children: <Widget>[loginPage(), homePage(), signupPage()],
             scrollDirection: Axis.horizontal,
           ),
         ),
@@ -33,7 +33,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget HomePage() {
+  Widget homePage() {
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
@@ -199,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget LoginPage() {
+  Widget loginPage() {
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
@@ -425,7 +425,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget SignupPage() {
+  Widget signupPage() {
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
