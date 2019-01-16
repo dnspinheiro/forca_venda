@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Animation_Gesture/login_animation.dart';
-
+import 'Components/signInButton.dart';
 // import 'package:forca_venda/HomePage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -13,6 +13,7 @@ class _LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
   AnimationController _loginButtonController;
   var animationStatus = 0;
+
   @override
   void initState() {
     super.initState();
@@ -348,16 +349,16 @@ class _LoginScreenState extends State<LoginScreen>
           textBottomForm('ESQUECEU SUA SENHA?'),
           animationStatus == 0
               ? new Padding(
-                  padding: const EdgeInsets.only(bottom: 50.0),
+                  padding: const EdgeInsets.only(bottom: 20.0),
                   child: new InkWell(
                       onTap: () {
                         setState(() {
                           animationStatus = 1;
-                          print('entrou no primeiro');
                         });
                         _playAnimation();
                       },
-                      child: buttonSubmitForm("LOGIN")),
+                      // child: buttonSubmitForm("LOGIN")),
+                      child: new SignIn()),
                 )
               : new StaggerAnimation(
                   buttonController: _loginButtonController.view),
