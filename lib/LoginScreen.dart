@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Animation_Gesture/login_animation.dart';
+import 'Components/signInButton.dart';
 // import 'package:forca_venda/HomePage.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,9 +11,28 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen>
     with TickerProviderStateMixin {
+  AnimationController _loginButtonController;
+  var animationStatus = 0;
+
   @override
   void initState() {
     super.initState();
+    _loginButtonController = new AnimationController(
+        duration: new Duration(milliseconds: 3000), vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _loginButtonController.dispose();
+    super.dispose();
+  }
+
+  Future<Null> _playAnimation() async {
+    print('chegou no animation');
+    try {
+      await _loginButtonController.forward();
+      await _loginButtonController.reverse();
+    } on TickerCanceled {}
   }
 
   @override
@@ -24,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen>
           child: PageView(
             controller: _controller,
             physics: new AlwaysScrollableScrollPhysics(),
-            children: <Widget>[LoginPage(), HomePage(), SignupPage()],
+            children: <Widget>[loginPage(), homePage(), signupPage()],
             scrollDirection: Axis.horizontal,
           ),
         ),
@@ -33,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget HomePage() {
+  Widget homePage() {
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
@@ -199,7 +220,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget LoginPage() {
+  Widget loginPage() {
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(
@@ -326,7 +347,21 @@ class _LoginScreenState extends State<LoginScreen>
             height: 24.0,
           ),
           textBottomForm('ESQUECEU SUA SENHA?'),
-          buttonSubmitForm("LOGIN"),
+          animationStatus == 0
+              ? new Padding(
+                  padding: const EdgeInsets.only(bottom: 20.0),
+                  child: new InkWell(
+                      onTap: () {
+                        setState(() {
+                          animationStatus = 1;
+                        });
+                        _playAnimation();
+                      },
+                      // child: buttonSubmitForm("LOGIN")),
+                      child: new SignIn()),
+                )
+              : new StaggerAnimation(
+                  buttonController: _loginButtonController.view),
           new Container(
             width: MediaQuery.of(context).size.width,
             margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 20.0),
@@ -425,7 +460,7 @@ class _LoginScreenState extends State<LoginScreen>
     );
   }
 
-  Widget SignupPage() {
+  Widget signupPage() {
     return new Container(
       height: MediaQuery.of(context).size.height,
       decoration: BoxDecoration(

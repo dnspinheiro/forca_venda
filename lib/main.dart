@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
       routes: <String, WidgetBuilder> {
-        '/onboarding': (BuildContext context) => new OnBoarding(),
+        '/intro': (BuildContext context) => new OnBoarding(),
         '/login': (BuildContext context) => new LoginScreen(),
       },
       // home: OnBoarding(),

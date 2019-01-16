@@ -125,7 +125,6 @@ class Page extends StatelessWidget {
 }
 
 goToLogin(context) {
-  print('button pressed');
   Navigator.of(context).pushReplacementNamed('/login');
 }
 

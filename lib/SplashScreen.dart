@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
         //       context,
         //       MaterialPageRoute(builder: (context) => OnBoarding()),
         //     ));
-        () => Navigator.of(context).pushReplacementNamed('/onboarding'),
+        () => Navigator.of(context).pushReplacementNamed('/intro'),
     );
   }
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget HomePage(context) {
+Widget homePage(context) {
   return new Container(
     height: MediaQuery.of(context).size.height,
     decoration: BoxDecoration(
