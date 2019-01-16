@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:forca_venda/UI/pages.dart';
+import 'package:luzarte/UI/pages.dart';
 
 class PagerIndicator extends StatelessWidget {
 

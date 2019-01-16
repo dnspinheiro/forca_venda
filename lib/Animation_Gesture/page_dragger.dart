@@ -3,7 +3,7 @@ import 'dart:async';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:forca_venda/UI/pager_indicator.dart';
+import 'package:luzarte/UI/pager_indicator.dart';
 
 class PageDragger extends StatefulWidget {
 

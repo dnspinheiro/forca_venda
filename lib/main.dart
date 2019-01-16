@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:forca_venda/LoginScreen.dart';
-import 'package:forca_venda/SplashScreen.dart';
-import 'package:forca_venda/OnBoarding.dart';
+import 'package:luzarte/LoginScreen.dart';
+import 'package:luzarte/SplashScreen.dart';
+import 'package:luzarte/OnBoarding.dart';
 
 void main() => runApp(MyApp());
 

@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import 'package:forca_venda/Animation_Gesture/page_dragger.dart';
-import 'package:forca_venda/Animation_Gesture/page_reveal.dart';
-import 'package:forca_venda/UI/pager_indicator.dart';
-import 'package:forca_venda/UI/pages.dart';
+import 'package:luzarte/Animation_Gesture/page_dragger.dart';
+import 'package:luzarte/Animation_Gesture/page_reveal.dart';
+import 'package:luzarte/UI/pager_indicator.dart';
+import 'package:luzarte/UI/pages.dart';
 
 /* void main() => runApp(new MyApp());
 

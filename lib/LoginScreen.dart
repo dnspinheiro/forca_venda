@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Animation_Gesture/login_animation.dart';
 import 'Components/signInButton.dart';
-// import 'package:forca_venda/HomePage.dart';
+// import 'package:luzarte/HomePage.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
