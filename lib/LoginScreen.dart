@@ -28,7 +28,6 @@ class _LoginScreenState extends State<LoginScreen>
   }
 
   Future<Null> _playAnimation() async {
-    print('chegou no animation');
     try {
       await _loginButtonController.forward();
       await _loginButtonController.reverse();
